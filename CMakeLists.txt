@@ -50,6 +50,7 @@ set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -stdlib=libc++ -Wl,-
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -stdlib=libc++ -Wl,-z,defs")
 add_compile_options(-nostdinc++ -Wall -Wextra -Werror)
 add_compile_options(-Wno-unused-parameter) # Until fix of irods_re_plugin.hpp
+add_compile_options(-Wno-unused-function) # Newer versions of OpenSSL do not use certain callbacks
 add_compile_options(-Wno-unneeded-internal-declaration) # Until fix of https://github.com/irods/irods/issues/3396
 link_libraries(c++abi curl xml2 crypto pthread)
 include_directories(${IRODS_EXTERNALS_FULLPATH_CLANG}/include/c++/v1
