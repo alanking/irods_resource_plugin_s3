@@ -258,7 +258,7 @@ class Test_S3_Cache_Base(ResourceSuite, ChunkyDevTest):
         self.admin.assert_icommand_fail("ils -L "+filename,'STDOUT_SINGLELINE',[" 3 "," & "+filename]) # should have a dirty copy
         self.admin.assert_icommand_fail("ils -L "+filename,'STDOUT_SINGLELINE',[" 4 "," & "+filename]) # should have a dirty copy
 
-        self.admin.assert_icommand(['irepl', '-R', 'fourthresc', filename])                # update last replica
+        self.admin.assert_icommand(['irepl', filename])                # update replica on default resource
 
         self.admin.assert_icommand("ils -L "+filename,'STDOUT_SINGLELINE',[" 0 "," & "+filename]) # should have a clean copy
         self.admin.assert_icommand("ils -L "+filename,'STDOUT_SINGLELINE',[" 1 "," & "+filename]) # should have a clean copy
