@@ -58,7 +58,7 @@ namespace irods::experimental::io::s3_transport
     extern const std::string  S3_DEFAULT_RESTORATION_TIER;
     extern const unsigned int S3_DEFAULT_RESTORATION_DAYS;
 
-    using log  = irods::experimental::log;
+    namespace log = irods::experimental::log;
     using logger = log::logger<s3_transport_logging_category>;
 
     const std::int64_t DEFAULT_MAX_SINGLE_PART_UPLOAD_SIZE = 5L * 1024 * 1024 * 1024;

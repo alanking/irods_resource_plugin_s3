@@ -47,7 +47,7 @@ namespace irods::experimental::io::s3_transport
     const unsigned int S3_DEFAULT_RESTORATION_DAYS = 7;
     const std::string  S3_DEFAULT_RESTORATION_TIER{S3_RESTORATION_TIER_STANDARD};
 
-    using log  = irods::experimental::log;
+    namespace log = irods::experimental::log;
     using logger = log::logger<s3_transport_logging_category>;
 
     irods::error get_object_s3_status(const std::string& object_key,
